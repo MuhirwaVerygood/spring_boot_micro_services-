@@ -1,20 +1,7 @@
 
-
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-
-
-
-
 spring:
   application:
-    name: school
-  config:
-    import: optional:configserver:http://localhost:8888
+    name: schools
 
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -30,10 +17,13 @@ spring:
     properties:
       hibernate:
         format_sql: true
-server:
-  port: 8070
+  config:
+    import: optional:configserver:http://localhost:8888
 
 
 application:
   config:
-    student-url: http://localhost:8090/api/v1/students
+    student-url: http://localhost:8222/api/v1/students
+
+server:
+  port: 8070

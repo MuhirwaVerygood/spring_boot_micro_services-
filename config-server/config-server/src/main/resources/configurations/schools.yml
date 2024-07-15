@@ -1,11 +1,20 @@
 
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
 spring:
   application:
-    name: students
+    name: schools
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/students
+    url: jdbc:postgresql://localhost:5433/schools
     username: verygood
     password: 1234
   jpa:
@@ -17,8 +26,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
-  config:
-    import: optional:configserver:http://localhost:8888
-
 server:
-  port: 8090
+  port: 8070
+
+
+application:
+  config:
+    student-url: http://localhost:8222/api/v1/students

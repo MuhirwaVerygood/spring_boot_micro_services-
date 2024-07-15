@@ -1,8 +1,14 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
 
 spring:
   application:
     name: students
-
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5433/students
@@ -17,8 +23,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
-  config:
-    import: optional:configserver:http://localhost:8888
-
 server:
   port: 8090
+
