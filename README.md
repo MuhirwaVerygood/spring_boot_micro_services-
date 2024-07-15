@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 Spring boot microservices
 
